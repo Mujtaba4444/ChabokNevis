@@ -24,8 +24,9 @@ dist/
 *.exe
 
 # Installer outputs
-installer/
-*.iss
+installer/*.exe
+installer/*.msi
+# Keep .iss scripts (Inno Setup source)
 
 # IDE
 .vscode/
