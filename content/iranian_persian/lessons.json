@@ -1,0 +1,10 @@
+[
+ {"id":"L1-08","level":1,"title":"Simple words","intro":"Your first real words.","text":"من تو او ما شما در به از با نان گل دست خانه کتاب مدرسه پدر مادر دوست تهران شیراز"},
+ {"id":"L2-01","level":2,"title":"Common words","intro":"Everyday vocabulary.","text":"بله نه ممنون لطفا خداحافظ سلام صبح بخیر شب بخیر دوست من همیشه"},
+ {"id":"L2-02","level":2,"title":"Frequent expressions","intro":"Greetings and polite phrases.","text":"حال شما چطور است من خوبم و شما از دیدن شما شاد شدم به امید دیدار موفق باشید"},
+ {"id":"L2-03","level":2,"title":"Short sentences","intro":"Short sentences with a full stop.","text":"من دوست دارم کتاب بخوانم. او در شیراز کار دارد. ما به مدرسه رفتیم. هوا امروز بسیار خوب است. پدر من در خانه است."},
+ {"id":"L2-04","level":2,"title":"Basic punctuation","intro":"The Persian question mark ؟ is Shift + / on the Persian keyboard.","text":"شما کجا هستید؟ من اینجا هستم. دوست شما کیست؟ او دوست من است."},
+ {"id":"L3-02","level":3,"title":"Longer sentences","intro":"Longer flowing sentences.","text":"امروز صبح من با دوستانم به دانشگاه رفتم و در کتابخانه درس خواندم. بعد از ظهر به خانه برگشتم و شام خوردم."},
+ {"id":"L3-04","level":3,"title":"Numbers and dates","intro":"Digits, slashes and currency.","text":"تاریخ امروز ۱۴۰۵/۰۸/۱۴ است. قیمت این کتاب ۲۵۰۰۰۰ تومان است."},
+ {"id":"L4-02","level":4,"title":"Professional writing","intro":"Formal report language.","text":"گزارش کار این هفته به شما تقدیم شد و نتایج آن در پیوست ارائه گردید"}
+]

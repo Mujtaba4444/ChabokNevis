@@ -1,0 +1,13 @@
+[
+ {"id":"L1-01","level":1,"title":"Home row: left hand","intro":"Rest your left fingers on ش س ی ب (keys A S D F): pinky ش, ring س, middle ی, index ب. Look at the text, not the keyboard.","drill":"شسیب","length":60},
+ {"id":"L1-02","level":1,"title":"Home row: right hand","intro":"Rest your right fingers on ت ن م ک (keys J K L ;): index ت, middle ن, ring م, pinky ک.","drill":"تنمک","length":60},
+ {"id":"L1-03","level":1,"title":"Home row complete","intro":"Add ل and ا with your index fingers (G and H) and گ with the right pinky (').","drill":"شسیبلاتنمکگ","length":80},
+ {"id":"L1-04","level":1,"title":"Top row: left side","intro":"Reach up from the home row: ض ص ث ق ف. Return your fingers to the home row after every key.","drill":"ضصثقفشسیب","length":80},
+ {"id":"L1-05","level":1,"title":"Top row: right side","intro":"Reach up with the right hand: غ ع ه خ ح ج چ پ.","drill":"غعهخحجچپتنمک","length":80},
+ {"id":"L1-06","level":1,"title":"Bottom row","intro":"Reach down: ظ ط ز ر ذ د ئ و. Use the same finger that rests above each key.","drill":"ظطزرذدئوشسیبتنمک","length":80},
+ {"id":"L1-07","level":1,"title":"All letters","intro":"Mix every letter. Aim for accuracy first, speed will follow.","drill":"ابپتثجچحخدذرزسشصضطظعغفقکگلمنوهی","length":120},
+ {"id":"L2-04","level":2,"title":"Basic punctuation","intro":"Practice common punctuation marks: comma (،), period (.), semicolon (;), colon (:), question mark (?), exclamation mark (!), parentheses, and quotes.","drill":".،؛:؟!()\"'","length":80},
+ {"id":"L3-01","level":3,"title":"Number row","intro":"Persian digits sit on the number row (1-0). Keep your hands anchored to the home row.","drill":"۱۲۳۴۵۶۷۸۹۰","length":60},
+ {"id":"L3-05","level":3,"title":"Paragraph typing","intro":"Type the whole paragraph. Keep a steady rhythm.","text":"فارسی زبان بسیار زیبا و کهن است. مردم ایران و افغانستان و تاجیکستان با این زبان سخن گفتند و شعر و کتاب نوشتند."},
+ {"id":"L4-01","level":4,"title":"Literature: Ferdowsi","intro":"Classic verses. Focus on accuracy.","text":"توانا بود هر که دانا بود ز دانش دل پیر برنا بود به نام خداوند جان و خرد کزین برتر اندیشه برنگذرد"}
+]

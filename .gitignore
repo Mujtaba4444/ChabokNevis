@@ -1,0 +1,61 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.pyc
+.pytest_cache/
+.coverage
+.tox
+.mypy_cache/
+.hypothesis/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Build outputs
+build/
+dist/
+*.spec
+*.exe
+
+# Installer outputs
+installer/
+*.iss
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local user data (databases, logs)
+*.db
+*.db-journal
+*.sqlite
+*.sqlite3
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+
+# PyInstaller
+*.manifest
+
+# Fix scripts (generated)
+fix_*.py
+
+# Local settings (if any)
+.local/
+*.local

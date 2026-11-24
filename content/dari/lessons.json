@@ -1,0 +1,10 @@
+[
+ {"id":"L1-08","level":1,"title":"Simple words","intro":"Your first real words.","text":"من تو او ما شما در به از با نان گل دست خانه کتاب مکتب پدر مادر دوست کابل هرات"},
+ {"id":"L2-01","level":2,"title":"Common words","intro":"Everyday vocabulary.","text":"بلی نخیر تشکر لطفا خدا نگهدار سلام صبح بخیر شب بخیر دوست من همیشه"},
+ {"id":"L2-02","level":2,"title":"Frequent expressions","intro":"Greetings and polite phrases.","text":"حال شما چطور است من خوبم و شما از دیدن شما خوش شدم به امید دیدار کامیاب باشید خدا نگهدار"},
+ {"id":"L2-03","level":2,"title":"Short sentences","intro":"Short sentences with a full stop.","text":"من دوست دارم کتاب بخوانم. او در هرات کار دارد. ما به مکتب رفتیم. هوا امروز بسیار خوب است. پدر من در خانه است."},
+ {"id":"L2-04","level":2,"title":"Basic punctuation","intro":"The Persian question mark ؟ is Shift + / on the Persian keyboard.","text":"شما کجا هستید؟ من اینجا هستم. دوست شما کیست؟ او دوست من است."},
+ {"id":"L3-02","level":3,"title":"Longer sentences","intro":"Longer flowing sentences.","text":"امروز صبح من با دوستانم به پوهنتون رفتم و در کتابخانه درس خواندم. بعد از چاشت به خانه برگشتم و شام خوردم."},
+ {"id":"L3-04","level":3,"title":"Numbers and dates","intro":"Digits, slashes and currency.","text":"تاریخ امروز ۱۴۰۵/۰۸/۱۴ است. قیمت این کتاب ۲۵۰ افغانی است."},
+ {"id":"L4-02","level":4,"title":"Professional writing","intro":"Formal report language.","text":"گزارش کاری این هفته به شما تقدیم شد و نتایج آن در ضمیمه ارائه گردید"}
+]
