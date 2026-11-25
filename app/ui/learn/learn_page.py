@@ -1,3 +1,4 @@
+from PySide6.QtCore import Qt
 from PySide6.QtWidgets import (QHBoxLayout, QLabel, QPushButton, QScrollArea, QStackedWidget, QVBoxLayout, QWidget)
 
 from ...core.constants import LESSON_PASS_ACCURACY
@@ -11,8 +12,19 @@ class LessonView(QWidget):
         super().__init__()
         self.ctx, self.lesson, self.on_next = ctx, None, on_next
         self._outcome = None            # (passed, result) of the last finished attempt
-        root = QVBoxLayout(self)
+
+        # Use a scroll area to ensure all content is accessible in constrained windows
+        scroll = QScrollArea(self)
+        scroll.setWidgetResizable(True)
+        scroll.setFrameShape(QScrollArea.NoFrame)
+        scroll.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
+        scroll.setVerticalScrollBarPolicy(Qt.ScrollBarAsNeeded)
+
+        content = QWidget()
+        root = QVBoxLayout(content)
         root.setContentsMargins(0, 0, 0, 0)
+        root.setSpacing(12)  # Reduced spacing for better responsiveness
+
         top = QHBoxLayout()
         back = QPushButton()
         translator.bind(back, "learn.back")
@@ -20,12 +32,15 @@ class LessonView(QWidget):
         self.title = label("", "pageTitle")
         top.addWidget(back); top.addWidget(self.title, 1)
         root.addLayout(top)
+
         self.intro = label("", "muted")
         self.intro.setWordWrap(True)
         root.addWidget(self.intro)
+
         self.panel = TypingPanel(ctx)
         self.panel.finished.connect(self._done)
         root.addWidget(self.panel, 1)
+
         row = QHBoxLayout()
         self.result = QLabel("")
         restart = QPushButton()
@@ -39,6 +54,12 @@ class LessonView(QWidget):
         self.next_btn.hide()
         row.addWidget(self.result, 1); row.addWidget(restart); row.addWidget(self.next_btn)
         root.addLayout(row)
+
+        scroll.setWidget(content)
+        outer = QVBoxLayout(self)
+        outer.setContentsMargins(0, 0, 0, 0)
+        outer.addWidget(scroll)
+
         translator.languageChanged.connect(lambda _c: self._retranslate())
 
     def open(self, lesson):

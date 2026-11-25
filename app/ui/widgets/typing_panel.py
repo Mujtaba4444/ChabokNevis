@@ -109,6 +109,8 @@ class TypingPanel(QWidget):
         root.addWidget(self.keyboard)
         ctx.settings.changed.connect(lambda _k: self.apply_settings())
         self.apply_settings()
+        # Ensure minimum height is responsive to window size
+        self.setMinimumHeight(0)
 
     # ---- settings -------------------------------------------------------
     def apply_settings(self):

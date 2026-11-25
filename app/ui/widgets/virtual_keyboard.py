@@ -34,7 +34,8 @@ class VirtualKeyboard(QWidget):
         self._flash = None
         self._flash_ok = True
         self._ox = self._oy = 0.0
-        self.setMinimumHeight(380)
+        # Reduced minimum height for better responsiveness in snapped windows
+        self.setMinimumHeight(280)
         self.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Preferred)
 
     def set_layout(self, layout):
