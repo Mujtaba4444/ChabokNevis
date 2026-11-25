@@ -6,6 +6,7 @@ from ..core.config import user_data_dir
 from ..core.layouts import Layout, load_layouts
 from ..database.connection import Database
 from ..database.repositories import SettingsRepo, UserRepo
+from ..services.sound_service import SoundService
 from .content_service import ContentService
 from .progress_service import ProgressService
 from .settings_service import SettingsService
@@ -18,6 +19,7 @@ class AppContext:
     content: ContentService
     progress: ProgressService
     layouts: dict[str, Layout]
+    sound_service: SoundService | None = None
 
 
 def build_context(db_path=None) -> AppContext:
@@ -28,4 +30,4 @@ def build_context(db_path=None) -> AppContext:
     progress = ProgressService(db)
     for variant in ("iranian_persian", "dari"):
         progress.lessons.sync(content.lessons(variant))
-    return AppContext(db, settings, content, progress, load_layouts())
+    return AppContext(db, settings, content, progress, load_layouts(), SoundService())

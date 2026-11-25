@@ -26,7 +26,7 @@
 | **Speed Tests** | Timed tests (30s, 1m, 3m, 5m) with WPM and accuracy scoring |
 | **Virtual Keyboard** | 3D interactive keyboard with finger guidance and key highlighting |
 | **Real-time Feedback** | Per-character color coding (green=correct, red=incorrect, highlight=current) |
-| **Mechanical Keyboard Sounds** | Authentic click/clack sounds with volume control and variation pool |
+| **Wrong-Character Sound** | Distinct error sound with 6 options, volume control, and preview |
 | **Bilingual UI** | English and Dari (Afghan Persian) interfaces with RTL support |
 | **Progress Tracking** | SQLite-backed statistics: WPM history, accuracy, daily goals, charts |
 | **Themes** | Light and dark mode with automatic language-aware layout mirroring |
@@ -121,7 +121,8 @@ ChabokNevis/
 └── tests/                     # Unit tests
     ├── test_engine.py
     ├── test_hands.py
-    └── test_i18n.py
+    ├── test_i18n.py
+    └── test_sound.py
 ```
 
 ---
@@ -146,7 +147,7 @@ ChabokNevis/
 - **Theme**: Light / Dark
 - **Font**: Family and size for typing area
 - **Virtual Keyboard**: Show/hide 3D keyboard
-- **Sounds**: Enable/disable, correct key sound, error sound, volume slider (0–100%)
+- **Sounds**: Enable/disable, wrong-character sound selection (6 options), preview button, volume slider (0–100%)
 - **Strict Mode**: Exact character matching
 - **Daily Goal**: Minutes per day target
 

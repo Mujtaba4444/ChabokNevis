@@ -98,7 +98,8 @@ class TypingPanel(QWidget):
         self.hint = QLabel("")
         self.hint.setObjectName("muted")
         self.keyboard = VirtualKeyboard()
-        self.sound_service = SoundService(self)
+        # Use shared sound service from application context (one service for all typing panels)
+        self.sound_service = ctx.sound_service
 
         root = QVBoxLayout(self)
         root.setContentsMargins(0, 0, 0, 0)
@@ -120,8 +121,7 @@ class TypingPanel(QWidget):
         self.keyboard.set_layout(self.layout_obj)
         self.keyboard.setVisible(bool(s.get("show_keyboard")))
         self.sound_service.set_enabled(bool(s.get("sound")))
-        self.sound_service.set_sound_correct(bool(s.get("sound_correct")))
-        self.sound_service.set_sound_error(bool(s.get("sound_error")))
+        self.sound_service.set_sound(int(s.get("sound_index")))
         self.sound_service.set_volume(s.get("sound_volume") / 100.0)
         self._rebuild()
 
@@ -176,12 +176,8 @@ class TypingPanel(QWidget):
         loc = self.layout_obj.locate(ch)
         self.keyboard.flash(SPACE if ch == " " else (loc[0] if loc else None), ok)
         if self.ctx.settings.get("sound"):
-            if ok:
-                if ch == " ":
-                    self.sound_service.play_space()
-                else:
-                    self.sound_service.play_click()
-            elif not ok:
+            if not ok:
+                # Only wrong-character sound; correct keystrokes produce no sound
                 self.sound_service.play_error()
         if self.extender and len(self.engine.target) - self.engine.position < 40:
             more = " " + self.extender()

@@ -34,9 +34,8 @@ DEFAULT_SETTINGS = {
     "font_family": "Vazirmatn",
     "font_size": 22,
     "sound": False,
-    "sound_correct": True,
-    "sound_error": True,
     "sound_volume": 75,         # 0-100, default 75%
+    "sound_index": 0,           # selected wrong-character sound (0-5)
     "show_keyboard": True,
     "strict_mode": False,       # strict = exact characters (layout training)
     "accept_latin": True,       # map English-layout keys to Persian (no OS layout needed)

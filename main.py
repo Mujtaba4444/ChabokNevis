@@ -7,6 +7,7 @@ from PySide6.QtWidgets import QApplication
 
 from app.core.config import resource_path
 from app.core.constants import APP_NAME
+from app.services.context import build_context
 
 
 def main() -> int:
@@ -27,7 +28,7 @@ def main() -> int:
 
     from app.ui.main_window import MainWindow
 
-    window = MainWindow()
+    window = MainWindow(build_context())
     window.showMaximized()
 
     return app.exec()
