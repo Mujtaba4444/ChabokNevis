@@ -73,31 +73,35 @@ class SettingsPage(QWidget):
         form.addRow(tlabel("settings.goal"), spin("daily_goal_minutes", 1, 240))
         form.addRow(tlabel("settings.show_keyboard"), check("show_keyboard", "settings.show_keyboard"))
 
-        # Typing Sounds section - only wrong-character sound
+        # Typing Sounds section - compact design
         sound_section = tlabel("settings.sound")
         sound_section.setObjectName("sectionTitle")
         form.addRow(sound_section)
         form.addRow(tlabel("settings.sound_tip"), check("sound", "settings.sound", "settings.sound_tip"))
 
-        # Sound selection dropdown
+        # Sound selection dropdown - compact
         sound_combo = QComboBox()
-        sound_combo.setMinimumWidth(200)
+        sound_combo.setMinimumWidth(180)
+        sound_combo.setMaximumWidth(220)
         self._sound_combo = sound_combo
         self._populate_sound_combo(s)
         translator.watch(lambda _c=None, s=s: self._populate_sound_combo(s))
         sound_combo.currentIndexChanged.connect(lambda _i: s.set("sound_index", self._sound_combo.currentData()))
         form.addRow(tlabel("settings.sound_select_tip"), sound_combo)
 
-        # Preview button
+        # Preview button - compact with RTL support
         preview_btn = QPushButton()
         translator.bind(preview_btn, "settings.sound_preview")
-        # Use minimum width to accommodate RTL text like "پیش‌نمایش"
-        preview_btn.setMinimumWidth(100)
+        preview_btn.setMinimumWidth(90)
+        preview_btn.setMaximumWidth(110)
         preview_btn.setSizePolicy(QSizePolicy.MinimumExpanding, QSizePolicy.Fixed)
         preview_btn.clicked.connect(lambda: self._preview_sound())
         form.addRow(QLabel(), preview_btn)
 
-        form.addRow(tlabel("settings.sound_volume"), slider("sound_volume", 0, 100))
+        # Volume slider - compact
+        volume_slider = slider("sound_volume", 0, 100)
+        volume_slider.setFixedHeight(20)
+        form.addRow(tlabel("settings.sound_volume"), volume_slider)
 
         form.addRow(tlabel("settings.strict"), check("strict_mode", "settings.strict", "settings.strict_tip"))
         form.addRow(tlabel("settings.latin"), check("accept_latin", "settings.latin", "settings.latin_tip"))

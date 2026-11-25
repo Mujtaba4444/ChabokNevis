@@ -59,8 +59,17 @@ class SoundService:
         self._enabled = bool(enabled)
 
     def set_sound(self, index: int):
-        """Select which wrong-character sound to play (0-5). Clamp to valid range."""
-        self._sound_index = max(0, min(len(self.SOUND_NAMES) - 1, int(index)))
+        """Select which wrong-character sound to play (0-5). Clamp to valid range.
+
+        Handles None or invalid values gracefully by defaulting to 0.
+        """
+        if index is None:
+            index = 0
+        try:
+            index = int(index)
+        except (ValueError, TypeError):
+            index = 0
+        self._sound_index = max(0, min(len(self.SOUND_NAMES) - 1, index))
         path = self._error_sound_paths[self._sound_index]
         if path.exists():
             self._error_effect.setSource(QUrl.fromLocalFile(str(path)))

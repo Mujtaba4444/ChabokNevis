@@ -12,7 +12,10 @@ class SettingsService(QObject):
         self._v = {**DEFAULT_SETTINGS, **repo.load()}
 
     def get(self, key):
-        return self._v.get(key, DEFAULT_SETTINGS.get(key))
+        val = self._v.get(key)
+        if val is None:
+            return DEFAULT_SETTINGS.get(key)
+        return val
 
     def set(self, key, value):
         if self._v.get(key) == value:
