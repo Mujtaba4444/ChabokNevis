@@ -1,6 +1,6 @@
 from PySide6.QtCore import Qt
 from PySide6.QtGui import QFontDatabase
-from PySide6.QtWidgets import (QCheckBox, QComboBox, QFontComboBox, QFormLayout, QHBoxLayout, QLabel, QPushButton, QSlider, QSpinBox, QVBoxLayout, QWidget)
+from PySide6.QtWidgets import (QCheckBox, QComboBox, QFontComboBox, QFormLayout, QHBoxLayout, QLabel, QPushButton, QSizePolicy, QSlider, QSpinBox, QVBoxLayout, QWidget)
 
 from ...core.constants import VARIANTS
 from ...i18n import translator
@@ -81,6 +81,7 @@ class SettingsPage(QWidget):
 
         # Sound selection dropdown
         sound_combo = QComboBox()
+        sound_combo.setMinimumWidth(200)
         self._sound_combo = sound_combo
         self._populate_sound_combo(s)
         translator.watch(lambda _c=None, s=s: self._populate_sound_combo(s))
@@ -90,7 +91,9 @@ class SettingsPage(QWidget):
         # Preview button
         preview_btn = QPushButton()
         translator.bind(preview_btn, "settings.sound_preview")
-        preview_btn.setFixedWidth(80)
+        # Use minimum width to accommodate RTL text like "پیش‌نمایش"
+        preview_btn.setMinimumWidth(100)
+        preview_btn.setSizePolicy(QSizePolicy.MinimumExpanding, QSizePolicy.Fixed)
         preview_btn.clicked.connect(lambda: self._preview_sound())
         form.addRow(QLabel(), preview_btn)
 
@@ -113,8 +116,8 @@ class SettingsPage(QWidget):
     def _preview_sound(self):
         """Preview the selected wrong-character sound using the shared sound service."""
         svc = self.ctx.sound_service
-        svc.set_sound(int(self.ctx.settings.get("sound_index", 0)))
-        svc.set_volume(self.ctx.settings.get("sound_volume", 75) / 100.0)
+        svc.set_sound(int(self.ctx.settings.get("sound_index")))
+        svc.set_volume(self.ctx.settings.get("sound_volume") / 100.0)
         svc.play_error()
 
     def _localize_spins(self):

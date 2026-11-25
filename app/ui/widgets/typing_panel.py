@@ -200,6 +200,7 @@ class TypingPanel(QWidget):
         fmt = QTextCharFormat()
         if ok is True:
             fmt.setForeground(QColor(c["success"]))
+            fmt.setBackground(QColor(c["card"]))  # Explicit background for correct chars
         elif ok is False:
             fmt.setForeground(QColor(c["error"]))
             fmt.setBackground(QColor(c["error_bg"]))
