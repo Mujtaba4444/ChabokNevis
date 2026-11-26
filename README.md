@@ -1,277 +1,330 @@
-<div align="center">
-
-# چابک‌نویس | ChabokNevis
-
-### A Persian/Dari and English Typing Tutor for Windows
-
-Improve your typing speed, accuracy, and keyboard skills with ChabokNevis.
-
-<p>
-  <img src="https://img.shields.io/badge/Python-3.10%2B-blue?logo=python&logoColor=white" alt="Python">
-  <img src="https://img.shields.io/badge/PySide6-6.6%2B-green?logo=qt&logoColor=white" alt="PySide6">
-  <img src="https://img.shields.io/badge/Platform-Windows-0078D6?logo=windows&logoColor=white" alt="Windows">
-  <img src="https://img.shields.io/badge/Version-1.0.1-success" alt="Version">
-</p>
-
-<p>
-  <a href="https://github.com/Mujtaba4444/ChabokNevis/releases/latest/download/ChabokNevis_Setup.exe">
-    <img src="https://img.shields.io/badge/Download-ChabokNevis-brightgreen?style=for-the-badge&logo=windows" alt="Download ChabokNevis">
-  </a>
-</p>
-
-<p>
-  <a href="https://github.com/Mujtaba4444/ChabokNevis/releases">All Releases</a> •
-  <a href="https://github.com/Mujtaba4444/ChabokNevis/issues">Report a Bug</a> •
-  <a href="https://github.com/Mujtaba4444">GitHub Profile</a>
-</p>
-
-</div>
-
----
-
-## Overview
-
-**ChabokNevis (چابک‌نویس)** is a desktop typing tutor designed to help users improve their typing speed, accuracy, and keyboard skills.
-
-It supports Persian/Dari and English typing, providing interactive lessons, real-time typing feedback, mechanical keyboard sound effects, and progress statistics.
-
-The application works offline and stores user data locally.
-
-## Download
-
-The latest version is **v1.0.1**.
-
-### Windows Installer
-
-Download and run the installer:
-
-**[Download ChabokNevis for Windows](https://github.com/Mujtaba4444/ChabokNevis/releases/latest/download/ChabokNevis_Setup.exe)**
-
-No separate Python installation is required when using the Windows installer.
-
-For previous versions, visit the [Releases page](https://github.com/Mujtaba4444/ChabokNevis/releases).
-
-### System Requirements
-
-| Requirement | Minimum |
-|---|---|
-| Operating System | Windows 10 or later |
-| Architecture | 64-bit |
-| Internet Connection | Not required |
-| Python | Not required for the installer |
-
----
-
-## Features
-
-| Feature | Description |
-|---|---|
-| **Two Languages** | Supports Persian/Dari and English typing. |
-| **Interactive Lessons** | Practice typing through structured lessons and exercises. |
-| **Real-Time Feedback** | Instantly identifies correct and incorrect characters. |
-| **Character Highlighting** | Displays correct characters in green and incorrect characters in red. |
-| **Keyboard Sound Effects** | Provides mechanical keyboard sounds while typing. |
-| **Adjustable Sound Volume** | Allows users to control keyboard sound volume. |
-| **Typing Statistics** | Tracks typing performance and progress. |
-| **Language Settings** | Switch between the supported application languages. |
-| **Offline Functionality** | Works without an internet connection. |
-| **Local Storage** | Stores application data locally using SQLite. |
-| **Modern Interface** | Provides a clean desktop interface designed with PySide6. |
-
----
-
-## Screenshots
-
-<!-- Add your application screenshots here. -->
-
-<!--
-<p align="center">
-  <img src="screenshots/dashboard.png" width="800" alt="ChabokNevis Dashboard">
-</p>
-
-<p align="center">
-  <img src="screenshots/typing.png" width="800" alt="Typing Practice">
-</p>
-
-<p align="center">
-  <img src="screenshots/settings.png" width="800" alt="Application Settings">
-</p>
--->
-
----
-
-## Technologies
-
-ChabokNevis is built using the following technologies:
-
-| Technology | Purpose |
-|---|---|
-| **Python** | Main programming language |
-| **PySide6** | Desktop graphical user interface |
-| **SQLite** | Local database |
-| **PyInstaller** | Application packaging |
-| **Inno Setup** | Windows installer creation |
-| **pytest** | Automated testing |
-
----
-
-## Installation
-
-### Option 1: Windows Installer (Recommended)
-
-1. Download `ChabokNevis_Setup.exe` from the [latest release](https://github.com/Mujtaba4444/ChabokNevis/releases/latest).
-2. Run the installer.
-3. Follow the installation instructions.
-4. Launch ChabokNevis from the Start Menu or desktop shortcut.
-
-### Option 2: Run from Source
-
-If you want to run the application from its source code:
-
-**1. Clone the repository**
-
-```bash
-git clone https://github.com/Mujtaba4444/ChabokNevis.git
-```
-
-**2. Navigate to the project directory**
-
-```bash
-cd ChabokNevis
-```
-
-**3. Create a virtual environment**
-
-```bash
-python -m venv .venv
-```
-
-**4. Activate the virtual environment**
-
-Windows PowerShell:
-
-```powershell
-.venv\Scripts\Activate.ps1
-```
-
-**5. Install dependencies**
-
-```bash
-pip install -r requirements.txt
-```
-
-**6. Run the application**
-
-```bash
-python main.py
-```
-
----
-
-## Project Structure
-
-```text
-ChabokNevis/
-│
-├── main.py
-├── requirements.txt
-├── README.md
-├── .gitignore
-├── ChabokNevis_Setup.iss
-│
-├── app/
-│   ├── core/
-│   ├── database/
-│   ├── engine/
-│   ├── i18n/
-│   │   └── locales/
-│   ├── resources/
-│   │   ├── fonts/
-│   │   ├── icons/
-│   │   ├── images/
-│   │   └── sounds/
-│   ├── services/
-│   └── ui/
-│
-├── content/
-│
-└── tests/
-```
-
----
-
-## Usage
-
-1. Launch ChabokNevis.
-2. Choose your preferred application language.
-3. Select a typing lesson or exercise.
-4. Start typing the displayed text.
-5. Observe the real-time character feedback.
-6. Review your typing statistics and progress.
-7. Customize application settings, including keyboard sound volume.
-
----
-
-## Development
-
-### Run Tests
-
-To execute the automated test suite:
-
-```bash
-pytest tests --import-mode=importlib
-```
-
-### Build the Application
-
-The application can be packaged using PyInstaller:
-
-```bash
-pyinstaller --noconfirm --clean --windowed --onedir --name ChabokNevis --icon "app/resources/icons/ChabokNevis.ico" --add-data "app/resources;app/resources" --add-data "app/i18n/locales;app/i18n/locales" --add-data "content;content" main.py
-```
-
-The generated application will be located in:
-
-```text
-dist/ChabokNevis/
-```
-
-### Create the Windows Installer
-
-The Windows installer is configured using:
-
-```text
-ChabokNevis_Setup.iss
-```
-
-Open the script with Inno Setup Compiler to build the installer.
-
----
-
-## Contact & Support
-
-Have a question, found a bug, or want to suggest an improvement?
-
-- **GitHub Profile:** [@Mujtaba4444](https://github.com/Mujtaba4444)
-- **Bug Reports:** [Open an Issue](https://github.com/Mujtaba4444/ChabokNevis/issues)
-- **Feature Requests:** [Submit a Feature Request](https://github.com/Mujtaba4444/ChabokNevis/issues/new)
-
-For general questions and project-related discussions, feel free to use GitHub.
-
----
-
-## Acknowledgments
-
-Thank you to everyone who supports the development of ChabokNevis and helps improve the project through feedback and suggestions.
-
----
-
-<div align="center">
-
-**ChabokNevis | چابک‌نویس**
-
-Made with Python and PySide6.
-
-[GitHub Repository](https://github.com/Mujtaba4444/ChabokNevis) • [Releases](https://github.com/Mujtaba4444/ChabokNevis/releases) • [Support](https://github.com/Mujtaba4444/ChabokNevis/issues)
-
-</div>
+\<div align="center">\
+\
+\# ChabokNevis (چابک‌نویس)\
+\
+\*\*Offline Persian (Dari & Iranian Farsi) Typing Tutor for Windows\*\*\
+\
+[![Python]\(https\://img.shields.io/badge/Python-3.10+-blue.svg)]\(https\://python.org)\
+[![PySide6]\(https\://img.shields.io/badge/PySide6-6.6+-green.svg)]\(https\://pypi.org/project/PySide6/)\
+[![Platform]\(https\://img.shields.io/badge/Platform-Windows-lightgrey.svg)]\(https\://microsoft.com/windows)\
+[![Version]\(https\://img.shields.io/badge/Version-1.0.1-blue.svg)]\(https\://github.com/Mujtaba4444/ChabokNevis/releases/latest)\
+\
+\</div>\
+\
+\---\
+\
+\## Overview\
+\
+\*\*ChabokNevis\*\* (چابک‌نویس) is a complete, offline typing tutor designed for learning Persian (Dari & Iranian Farsi) keyboard layouts. Built with Python and PySide6, it provides a structured learning path from beginner to advanced, with interactive exercises, real-time feedback, and comprehensive progress tracking.\
+\
+\## Download\
+\
+\*\*Latest Release: v1.0.1\*\*\
+\
+Download ChabokNevis for Windows:\
+\
+\<div align="center">\
+\
+\### [Download ChabokNevis v1.0.1 — Windows Installer]\(https\://github.com/Mujtaba4444/ChabokNevis/releases/latest/download/ChabokNevis_Setup.exe)\
+\
+\</div>\
+\
+\### System Requirements\
+\
+\- Windows 10 or later.\
+\- 64-bit Windows.\
+\- No Python installation required.\
+\
+\*\*Installation:\*\* Download \`ChabokNevis_Setup.exe\`, run it, and follow the installation instructions.\
+\
+[View All Releases]\(https\://github.com/Mujtaba4444/ChabokNevis/releases)\
+\
+\---\
+\
+\## Key Features\
+\
+\| Feature | Description |\
+\|---------|-------------|\
+\| \*\*Structured Lessons\*\* | 4 levels (Beginner → Advanced) covering home row, top/bottom rows, numbers, punctuation, and literature |\
+\| \*\*Free Practice\*\* | Characters, words, sentences, paragraphs, literature, and custom text modes |\
+\| \*\*Speed Tests\*\* | Timed tests (30s, 1m, 3m, 5m) with WPM and accuracy scoring |\
+\| \*\*Virtual Keyboard\*\* | 3D interactive keyboard with finger guidance and key highlighting |\
+\| \*\*Real-time Feedback\*\* | Per-character color coding (green = correct, red = incorrect, highlight = current) |\
+\| \*\*Wrong-Character Sound\*\* | Error sounds with multiple options, volume control, and preview |\
+\| \*\*Bilingual UI\*\* | English and Dari (Afghan Persian) interfaces with RTL support |\
+\| \*\*Progress Tracking\*\* | SQLite-backed statistics: WPM history, accuracy, daily goals, and charts |\
+\| \*\*Themes\*\* | Light and dark modes with automatic language-aware layout mirroring |\
+\| \*\*Font Selection\*\* | Choose from system fonts with live preview in the typing area |\
+\| \*\*Fully Offline\*\* | No internet required; all data stored locally in SQLite |\
+\
+\---\
+\
+\## Screenshots\
+\
+\<!-- Add application screenshots to the screenshots/ directory and uncomment these examples. -->\
+\
+\<!--\
+\### Dashboard\
+![Dashboard]\(screenshots/dashboard.png)\
+\
+\### Learn Mode\
+![Learn Mode]\(screenshots/learn.png)\
+\
+\### Practice Mode\
+![Practice Mode]\(screenshots/practice.png)\
+\
+\### Settings\
+![Settings]\(screenshots/settings.png)\
+\
+\### Statistics\
+![Statistics]\(screenshots/statistics.png)\
+\
+\### Virtual Keyboard\
+![Virtual Keyboard]\(screenshots/virtual-keyboard.png)\
+\-->\
+\
+\---\
+\
+\## Technologies\
+\
+\- \*\*Language:\*\* Python 3.10+\
+\- \*\*GUI Framework:\*\* PySide6 (Qt 6)\
+\- \*\*Database:\*\* SQLite (built-in, no server required)\
+\- \*\*Packaging:\*\* PyInstaller + Inno Setup\
+\- \*\*Testing:\*\* pytest\
+\
+\---\
+\
+\## Installation\
+\
+\### Windows Installer (Recommended)\
+\
+1\. Visit [ChabokNevis Releases]\(https\://github.com/Mujtaba4444/ChabokNevis/releases).\
+2\. Download the latest \`ChabokNevis_Setup.exe\`.\
+3\. Run the installer.\
+4\. Follow the installation instructions.\
+5\. Launch ChabokNevis from the Desktop shortcut or Start Menu.\
+\
+No Python installation is required when using the Windows installer.\
+\
+\### From Source\
+\
+\#### Prerequisites\
+\
+\- Windows 10 or later (64-bit).\
+\- Python 3.10 or higher.\
+\- Git.\
+\
+\#### Setup\
+\
+Clone the repository:\
+\
+\`\`\`bash\
+git clone https\://github.com/Mujtaba4444/ChabokNevis.git\
+cd ChabokNevis\
+\`\`\`\
+\
+Create a virtual environment:\
+\
+\`\`\`bash\
+python -m venv .venv\
+\`\`\`\
+\
+Activate it:\
+\
+\`\`\`powershell\
+.venv\Scripts\activate\
+\`\`\`\
+\
+Install dependencies:\
+\
+\`\`\`bash\
+pip install -r requirements.txt\
+\`\`\`\
+\
+Run the application:\
+\
+\`\`\`bash\
+python main.py\
+\`\`\`\
+\
+\---\
+\
+\## Project Structure\
+\
+\`\`\`text\
+ChabokNevis/\
+├── main.py\
+├── requirements.txt\
+├── README.md\
+├── .gitignore\
+├── ChabokNevis_Setup.iss\
+│\
+├── app/\
+│   ├── core/\
+│   ├── database/\
+│   ├── engine/\
+│   ├── i18n/\
+│   │   ├── locales/\
+│   │   │   ├── en.json\
+│   │   │   └── fa_AF.json\
+│   │   └── translator.py\
+│   │\
+│   ├── resources/\
+│   │   ├── fonts/\
+│   │   ├── icons/\
+│   │   ├── images/\
+│   │   └── sounds/\
+│   │\
+│   ├── services/\
+│   ├── ui/\
+│   │   ├── widgets/\
+│   │   ├── dashboard/\
+│   │   ├── learn/\
+│   │   ├── practice/\
+│   │   ├── speed_test/\
+│   │   ├── statistics/\
+│   │   ├── settings/\
+│   │   ├── about/\
+│   │   └── main_window\.py\
+│   │\
+│   └── config.py\
+│\
+├── content/\
+│   ├── shared/\
+│   ├── dari/\
+│   ├── iranian_persian/\
+│   └── layouts/\
+│\
+├── tests/\
+│\
+└── extras/\
+\`\`\`\
+\
+\---\
+\
+\## Usage\
+\
+\### Learning Flow\
+\
+1\. \*\*Dashboard\*\* → View progress, daily goal, and next lesson.\
+2\. \*\*Learn\*\* → Follow structured lessons by level, starting with the home row.\
+3\. \*\*Practice\*\* → Improve typing through characters, words, sentences, and custom text.\
+4\. \*\*Speed Test\*\* → Take timed tests to measure your typing speed.\
+5\. \*\*Statistics\*\* → Review detailed typing statistics and progress history.\
+\
+\### Keyboard Input Modes\
+\
+\- \*\*OS Persian Keyboard:\*\* Direct Persian character input.\
+\- \*\*English OS Layout:\*\* Physical keys mapped to their corresponding Persian letters.\
+\- \*\*Relaxed Mode (Default):\*\* Treats Arabic ي/ك as Persian ی/ک and unifies digit styles.\
+\- \*\*Strict Mode:\*\* Requires exact character matching for keyboard layout training.\
+\
+\### Settings\
+\
+\- \*\*Language:\*\* English / Dari (افغانستان).\
+\- \*\*Theme:\*\* Light / Dark.\
+\- \*\*Font:\*\* Customize typing area font family and size.\
+\- \*\*Virtual Keyboard:\*\* Show or hide the 3D keyboard.\
+\- \*\*Sounds:\*\* Enable or disable wrong-character sounds, select sound effects, preview sounds, and adjust volume.\
+\- \*\*Strict Mode:\*\* Enable exact character matching.\
+\- \*\*Daily Goal:\*\* Set a daily typing practice target.\
+\
+\---\
+\
+\## Development\
+\
+\### Run Tests\
+\
+Run the project's test suite:\
+\
+\`\`\`powershell\
+pytest tests --import-mode=importlib\
+\`\`\`\
+\
+\### Build Executable\
+\
+Build the standalone Windows application using PyInstaller:\
+\
+\`\`\`powershell\
+pyinstaller --noconfirm --clean --windowed --onedir --name ChabokNevis --icon "app/resources/icons/ChabokNevis.ico" --add-data "app/resources;app/resources" --add-data "app/i18n/locales;app/i18n/locales" --add-data "content;content" main.py\
+\`\`\`\
+\
+The executable will be generated at:\
+\
+\`\`\`text\
+dist/ChabokNevis/ChabokNevis.exe\
+\`\`\`\
+\
+\### Create Windows Installer\
+\
+The Inno Setup script is located in the project root:\
+\
+\`\`\`text\
+ChabokNevis_Setup.iss\
+\`\`\`\
+\
+Open it using Inno Setup Compiler and compile it to generate the Windows installer.\
+\
+\---\
+\
+\## Contributing\
+\
+Contributions and suggestions are welcome.\
+\
+For contributions:\
+\
+1\. Fork the repository.\
+2\. Create a feature branch:\
+\
+&#x20;  \`\`\`bash\
+&#x20;  git checkout -b feature/amazing-feature\
+&#x20;  \`\`\`\
+\
+3\. Commit your changes:\
+\
+&#x20;  \`\`\`bash\
+&#x20;  git commit -m "Add amazing feature"\
+&#x20;  \`\`\`\
+\
+4\. Push your branch:\
+\
+&#x20;  \`\`\`bash\
+&#x20;  git push origin feature/amazing-feature\
+&#x20;  \`\`\`\
+\
+5\. Open a Pull Request.\
+\
+\### Code Style\
+\
+\- Follow PEP 8 guidelines.\
+\- Use type hints where appropriate.\
+\- Write tests for new features.\
+\- Update translations when adding new interface text.\
+\
+\---\
+\
+\## Developer\
+\
+\*\*Mohammad Mujtaba Mohammadi\*\*\
+\
+\- GitHub: [@Mujtaba4444]\(https\://github.com/Mujtaba4444)\
+\- Email: mujtaba.mohd.4444@gmail.com\
+\
+\---\
+\
+\## Acknowledgments\
+\
+\- [Vazirmatn Font]\(https\://github.com/rastikerdar/vazirmatn) for Persian typography.\
+\- Qt and PySide6 teams for the excellent framework.\
+\- Persian typing community for keyboard layout standards.\
+\
+\---\
+\
+\<div align="center">\
+\
+\*\*Built with ❤️ for Persian language learners\*\*\
+\
+\*\*ChabokNevis (چابک‌نویس)\*\*\
+\
+\</div>\
