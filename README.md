@@ -99,13 +99,27 @@ Download ChabokNevis for Windows:
 
 ## Installation
 
+### ⚠️ Windows SmartScreen Notice
+
+**If you see:** *"ChabokNevis_Setup.exe isn't commonly downloaded. Make sure you trust ChabokNevis_Setup.exe before you open it."*
+
+This is normal for new open-source applications. The warning appears because:
+- The installer is not signed with a paid code-signing certificate ($300–600/year)
+- It hasn't yet reached the download threshold for automatic trust
+
+### How to Install Anyway
+
+1. Click **"More info"** (not "Delete")
+2. Click **"Run anyway"**
+
+> This is **not a virus or malware**—it's a reputation system. The warning disappears once enough people download it (~100+ downloads). SHA256 checksums are provided on each release page.
+
 ### Windows Installer (Recommended)
 
 1. Visit [ChabokNevis Releases](https://github.com/Mujtaba4444/ChabokNevis/releases).
 2. Download the latest `ChabokNevis_Setup.exe`.
-3. Run the installer.
-4. Follow the installation instructions.
-5. Launch ChabokNevis from the Desktop shortcut or Start Menu.
+3. Run the installer (click "Run anyway" on the SmartScreen warning).
+4. Launch ChabokNevis from the Desktop shortcut or Start Menu.
 
 No Python installation is required when using the Windows installer.
 
@@ -116,8 +130,6 @@ No Python installation is required when using the Windows installer.
 - Windows 10 or later (64-bit).
 - Python 3.10 or higher.
 - Git.
-
-#### Setup
 
 **1. Clone the repository:**
 
